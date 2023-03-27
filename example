@@ -1,1 +1,1 @@
-awk 'BEGIN { FS=": "; total_sum=0; print "╔══════════════════════════════════════════╗\n║\tEndpoint\t\tTotal\t\t║\n╠══════════════════════════════════════════╣" } { printf "║\t%-16s%-16s║\n", $1, $2; total_sum += $2 } END { printf "╚══════════════════════════════════════════╝\nTOTAL: %.2f\n", total_sum }'
+... | awk 'BEGIN{sum=0} {sum+=$2} END{printf "TOTAL: %.2f\n", sum}'
